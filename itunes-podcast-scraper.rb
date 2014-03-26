@@ -39,13 +39,7 @@ CSV.open(" itunes-podcast-category-lists.csv", "w") do |csv|
       (1 .. number_of_pages).each do |i|
         url = alpha_podcast_url+"&page=#{i}"
         puts "#{k}, #{url}"
-        csv << [k, url]
-        #list_of_podcasts_doc = Nokogiri::HTML(open(url))
-        #podcast_xpath = "//div[2]/div[1]/ul/li/a/@href"
-        #podcast_urls = list_of_podcasts_doc.xpath(podcast_xpath)
-        # podcast_urls.each do |url|
-        #   puts url
-        # end
+        csv << [k, url]        
       end      
     end
   end
